@@ -36,13 +36,16 @@ def increaseBalance(balance):
 
 def decreaseBalance(balance, dailyLimit):
     withdraw = int(input("Ne kadar cekmek istersiniz? \n"))
-    dailyLimit -= withdraw
-    if dailyLimit >= 0:
-        balance -= withdraw
-        print("Isleminiz basariyla tamamlandi. Yeni bakiyeniz " + str(balance) + " tldir. Simdi ne yapmak istersiniz? \n")
+    if balance > 0 and withdraw < balance:
+        dailyLimit -= withdraw
+        if dailyLimit >= 0:
+            balance -= withdraw
+            print("Isleminiz basariyla tamamlandi. Yeni bakiyeniz " + str(balance) + " tldir. Simdi ne yapmak istersiniz? \n")
+        else:
+            print("Gunluk limiti astiniz. Isleminiz gerceklestirilemiyor. Simdi ne yapmak istersiniz? \n")
     else:
-        print("Gunluk limiti astiniz. Isleminiz gerceklestirilemiyor. Simdi ne yapmak istersiniz? \n")
-        
+        print("Bu islemi gerceklestirecek bakiyeniz yok.")
+
     return balance, dailyLimit
 
 def checkBalance(balance):
