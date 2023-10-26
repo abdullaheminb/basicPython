@@ -1,7 +1,8 @@
 balance = 5000
 dailyLimit = 2000
 correctPass = "1234"
-
+usdRate = 28
+eurRate = 30
 
 def chooseMenu():
     menuItem = int(input(
@@ -45,7 +46,7 @@ def decreaseBalance(balance, dailyLimit):
     return balance, dailyLimit
 
 def checkBalance(balance):
-    print("Hesab bakiyeniz " + str(balance) + "tldir. Simdi ne yapmak istersiniz? ")
+    print("Hesab bakiyeniz " + str(balance) + "tl " + str(balance/eurRate) + "euro ve " + str(balance/usdRate) + " usddir. Simdi ne yapmak istersiniz? ")
     
 def exit():
     print("Bizimle calistiginiz icin tesekkur ederiz")
