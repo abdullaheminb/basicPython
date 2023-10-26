@@ -2,6 +2,7 @@ import random
 correctPass = "1234"
 balance = 50
 
+#decideWinners
 def decideWinners(winningList):
     for i in range(22):
         winningList.append(random.randint(10, 99))
@@ -15,6 +16,8 @@ def seeMenu():
                          "2. Deposit Money into Account\n"
                          "3. Withdraw Money\n"
                          "4. Play Game\n"
+                         "5. Play for Me\n"
+                         "6. Play for Me 10 Times\n"
                          "0. Exit\n"
                          ))
     return menuItem
@@ -110,8 +113,6 @@ def earnMoney(balance, amount):
     balance += amount
     return balance
 
-
-
 #main
 def main(balance):
     chosenMenu = seeMenu()
@@ -123,13 +124,17 @@ def main(balance):
         withdraw(balance)
     elif chosenMenu == 4:
         game(balance)
+    elif chosenMenu == 5:
+        playForMe(balance)
+    elif chosenMenu == 6:
+        playForMe10(balance)
     elif chosenMenu == 0:
         print("Thanks for Playing")
     else:
         print("Thats not a viable option. Please try again.")
         main(balance)
 
-
+#check password
 def checkPass(correctPass):
     authorized = False
     for i in range(3):
@@ -140,6 +145,13 @@ def checkPass(correctPass):
         else:
             authorized = False
     return authorized
+
+def playForMe(balance):
+    luckyNumbers = []
+    winningList = []
+    decideWinners(winningList)
+    for i in range(10):
+        luckyNumbers.append(random.randint(10,99))
 
 authorized = checkPass(correctPass)
 if authorized:
