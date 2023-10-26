@@ -150,6 +150,7 @@ def playForMe(balance):
     luckyNumbers = []
     winningList = []
     decideWinners(winningList)
+    balance, toll = payToll(balance)
     for i in range(10):
         luckyNumbers.append(random.randint(10,99))
 

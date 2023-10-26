@@ -38,7 +38,7 @@ def main():
         return False
 
 counter = 0
-for i in range(100000):
+for i in range(10000000):
     win = main()
     if win: 
         counter += 1
