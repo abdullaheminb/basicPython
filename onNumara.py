@@ -126,8 +126,6 @@ def main(balance):
         game(balance)
     elif chosenMenu == 5:
         playForMe(balance)
-    elif chosenMenu == 6:
-        playForMe10(balance)
     elif chosenMenu == 0:
         print("Thanks for Playing")
     else:
