@@ -31,10 +31,8 @@ def main():
     winningNumbers = luckyNumbers() 
     counter = isWinner(winningNumbers, userNumbers)
     if counter >= 6 or counter == 0:
-        print("You won")
         return True
     else: 
-        print("You lose")
         return False
 
 counter = 0
