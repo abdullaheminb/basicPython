@@ -18,14 +18,23 @@ def payToll():
   
 def pickLuckyNumbers():
     luckyNumbers = []
-    for i in range(22):
-        luckyNumbers.append(random.randint(1,80))
+    while len(luckyNumbers)!= 22:
+        luckyNumber = random.randint(1,80)
+        if luckyNumber not in luckyNumbers:
+            luckyNumbers.append(luckyNumber)
+        else:
+            continue
+        
     return luckyNumbers
 
 def pickUserNumbers():
     userNumbers = []
-    for i in range(10):
-        userNumbers.append(random.randint(1,80))
+    while len(userNumbers)!= 10:
+        userNumber = random.randint(1,80)
+        if userNumber not in userNumbers:
+            userNumbers.append(userNumber)
+        else:
+            continue
     return userNumbers
 
 def getWinCategory(userNumbers, luckyNumbers):
