@@ -33,7 +33,7 @@ def bet():
 def menu():
     selection = int(input(
         """
-        Rulet oyununa hosgeldiniz. Oynamak istediğiniz tarzi seciniz\n
+        Welcome to Roulette. Choose your bet.\n
         1. Choose Red\n
         2. Choose Black\n
         3. Choose First 12\n
@@ -81,7 +81,7 @@ def main():
 
         choice = menu()
         if choice == 0:
-            print("Tekrar bekleriz.")
+            print("See you next time.")
             break
         elif choice not in reward.keys():
             print("Wrong Choice Try again")
