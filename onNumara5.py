@@ -1,11 +1,3 @@
-"""
-İkramiye havuzunun %15i birinci kategori kazananlarina
-İkramiye havuzunun %8i ikinci kategori kazananlarina;
-İkramiye havuzunun %10u, üçüncü kategori kazananlarina;
-İkramiye havuzunun %19u dördüncü kategori kazananlarina;
-İkramiye havuzunun %20si beşinci kategori kazananlarina;
-İkramiye havuzunun %28i altinci kategori kazananlarina;
-"""
 import random
 balance = 100000
 vault = balance
@@ -52,10 +44,6 @@ def main():
     if rightPick >= 6 or rightPick == 0:
         winCategory[rightPick][0] +=1
 
-for i in range(100000):
-    main()
-print(winCategory)
-
 def distributeEarnings():
     global balance, winCategory, vault, distributionRate
     distributedAmount = 0
@@ -67,5 +55,8 @@ def distributeEarnings():
             print(f"No one has been able to guess {key} numbers correctly. Money sent back to the vault.")
     print(f"We distributed {distributedAmount} lira from {vault} lira we had collected.")
 
+for i in range(100000):
+    main()
+print(winCategory)
 distributeEarnings()
 
