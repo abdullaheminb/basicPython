@@ -70,11 +70,9 @@ def updateBalance(multiplier, risk):
 
 def main():
     global balance
-    playAgain= True
-    while playAgain:
+    while 1:
         riskAmount, playable = bet()
         if playable == 0:
-            playAgain= False
             break
         elif playable == 1:
             continue
@@ -84,11 +82,10 @@ def main():
         choice = menu()
         if choice == 0:
             print("Tekrar bekleriz.")
-            playAgain = False
             break
         elif choice not in reward.keys():
-            print("Wrong Choice")
-            break
+            print("Wrong Choice Try again")
+            continue
         
         luckyNumber = pickWinner()
         
