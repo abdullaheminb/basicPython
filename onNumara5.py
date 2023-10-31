@@ -15,27 +15,16 @@ winCategory = {
 def payToll():
     global balance
     balance -= 1
-  
-def pickLuckyNumbers():
-    luckyNumbers = []
-    while len(luckyNumbers)!= 22:
-        luckyNumber = random.randint(1,80)
-        if luckyNumber not in luckyNumbers:
-            luckyNumbers.append(luckyNumber)
-        else:
-            continue
-        
-    return luckyNumbers
 
-def pickUserNumbers():
-    userNumbers = []
-    while len(userNumbers)!= 10:
-        userNumber = random.randint(1,80)
-        if userNumber not in userNumbers:
-            userNumbers.append(userNumber)
+def pickNumbers(length):
+    numbers = []
+    while len(numbers)!= length:
+        number = random.randint(1,80)
+        if number not in numbers:
+            numbers.append(number)
         else:
             continue
-    return userNumbers
+    return numbers
 
 def getWinCategory(userNumbers, luckyNumbers):
     counter = 0
@@ -47,8 +36,8 @@ def getWinCategory(userNumbers, luckyNumbers):
 def main():
     global balance, winCategory
     payToll()
-    luckyNumbers = pickLuckyNumbers()
-    userNumbers = pickUserNumbers()
+    luckyNumbers = pickNumbers(22)
+    userNumbers = pickNumbers(10)
     rightPick = getWinCategory(userNumbers,luckyNumbers)
     if rightPick >= 6 or rightPick == 0:
         winCategory[rightPick][0] +=1
