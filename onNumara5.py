@@ -11,7 +11,6 @@ winCategory = {
     0:[0,0.28]
 }
 
-#kazanan numaraları belirle
 def payToll():
     global balance
     balance -= 1
