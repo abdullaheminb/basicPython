@@ -3,7 +3,7 @@ number = int(input("Enter a 4 digit number: "))
 def turnNumbertoList(shadowNumber):
     digitList = []
     for i in range(4):
-        digitList.append(shadowNumber%10)
+        digitList.append(str(shadowNumber%10))
         shadowNumber = int(shadowNumber/10)
     return digitList
 
@@ -14,6 +14,8 @@ def getNumber(type, digitList):
         sortedList = sorted(digitList)
     else: 
         sortedList = sorted(digitList, reverse=True)
+    for i in range(len(sortedList)):
+        sortedList[i] = int(sortedList[i])
     for i in range(4):
             number0 += sortedList[i]*(10**i)
     return number0
